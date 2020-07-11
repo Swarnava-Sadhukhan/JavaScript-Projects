@@ -1,7 +1,10 @@
+
+//stores seconds,centiseconds and minutes
 var seconds = 00;
 var tens = 00;
 var mins = 00;
 
+//to update the display clock
 var appendTens = document.getElementById('tens');
 var appendSeconds = document.getElementById('seconds');
 var appendMins = document.getElementById('mins');
@@ -13,7 +16,6 @@ var buttonReset = document.getElementById('button-reset');
 var interval; 
 var f = 0;
 
-
 function startTimer(){
     tens++;
     if(tens<=9){
@@ -22,6 +24,7 @@ function startTimer(){
     else{
         appendTens.innerHTML = tens;
     }
+    //increments second
     if(tens>99){
         seconds++;
         appendSeconds.innerHTML = "0" + seconds;
@@ -31,6 +34,7 @@ function startTimer(){
     if(seconds>9){
         appendSeconds.innerHTML = seconds;
     }
+    //increments minutes
     if(seconds>59){
         mins++;
         appendMins.innerHTML = "0" + mins;
@@ -42,17 +46,20 @@ function startTimer(){
     }
 }
 
+//starts timer
 buttonStart.onclick = function(){
     f++;
     if(f==1)
         interval = setInterval(startTimer);
 }
 
+//stops timer
 buttonStop.onclick = function (){
     clearInterval(interval);
     f=0;
 }
 
+//resets timer
 buttonReset.onclick = function (){
     clearInterval(interval);
     tens = "00";
