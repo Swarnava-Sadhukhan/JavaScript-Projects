@@ -68,4 +68,5 @@ buttonReset.onclick = function (){
     f=0;
     appendTens.innerHTML = tens;
     appendSeconds.innerHTML = seconds;
+    appendMins.innerHTML = mins
 }
