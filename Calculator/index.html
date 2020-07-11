@@ -2,10 +2,13 @@
 <html>
     <head>
         <script>
+
+            //adds to the display
             function insert(num){
                 document.form.textview.value = document.form.textview.value + num; 
             }
 
+            //performs calculation
             function equal(){
                 var exp = document.form.textview.value;
                 if(exp){
@@ -13,10 +16,12 @@
                 }
             }
 
+            //Clears the whole display
             function clean(){
                 document.form.textview.value= "";
             }
 
+            //Clears one character from the end
             function back(){
                 var exp = document.form.textview.value;
                 document.form.textview.value= exp.substring(0,exp.length-1)
